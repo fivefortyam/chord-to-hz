@@ -24,7 +24,7 @@
 #define MAJOR_SEVENTH_TET 1.88774862536
 #define MAJOR_SEVENTH_JI 1.8984375
 double* maj(double root, bool tet) {
-	double chord[3];
+	static double chord[3];
 	chord[0] = root;
 	if (tet == true) {
 		chord[1] = root * MAJOR_THIRD_TET;
@@ -34,10 +34,11 @@ double* maj(double root, bool tet) {
 		chord[1] = root * MAJOR_THIRD_JI;
 		chord[2] = root * FIFTH_JI;
 	}
+	return chord;
 }
 
 double* min(double root, bool tet) {
-	double chord[3];
+	static double chord[3];
 	chord[0] = root;
 	if (tet == true) {
 		chord[1] = root * MINOR_THIRD_TET;
@@ -47,10 +48,11 @@ double* min(double root, bool tet) {
 		chord[1] = root * MINOR_THIRD_JI;
 		chord[2] = root * FIFTH_JI;
 	}
+	return chord;
 }
 
 double* dim(double root, bool tet) {
-	double chord[3];
+	static double chord[3];
 	chord[0] = root;
 	if (tet == true) {
 		chord[1] = root * MINOR_THIRD_TET;
@@ -60,10 +62,11 @@ double* dim(double root, bool tet) {
 		chord[1] = root * MINOR_THIRD_JI;
 		chord[2] = root * TRITONE_JI;
 	}
+	return chord;
 }
 
 double* aug(double root, bool tet) {
-	double chord[3];
+	static double chord[3];
 	chord[0] = root;
 	if (tet == true) {
 		chord[1] = root * MAJOR_THIRD_TET;
@@ -73,4 +76,69 @@ double* aug(double root, bool tet) {
 		chord[1] = root * MINOR_THIRD_JI;
 		chord[2] = root * MINOR_SIXTH_JI;
 	}
+	return chord;
+}
+
+double* maj7(double root, bool tet) {
+	static double chord[4];
+	chord[0] = root;
+	if (tet == true) {
+		chord[1] = root * MAJOR_THIRD_TET;
+		chord[2] = root * FIFTH_TET;
+		chord[3] = root * MAJOR_SEVENTH_TET;
+	}
+	if (tet == false) {
+		chord[1] = root * MAJOR_THIRD_JI;
+		chord[2] = root * FIFTH_JI;
+		chord[3] = root * MAJOR_SEVENTH_JI;
+	}
+	return chord;
+}
+
+double* min7(double root, bool tet) {
+	static double chord[4];
+	chord[0] = root;
+	if (tet == true) {
+		chord[1] = root * MINOR_THIRD_TET;
+		chord[2] = root * FIFTH_TET;
+		chord[3] = root * MINOR_SEVENTH_TET;
+	}
+	if (tet == false) {
+		chord[1] = root * MINOR_THIRD_JI;
+		chord[2] = root * FIFTH_JI;
+		chord[3] = root * MINOR_SEVENTH_JI;
+	}
+	return chord;
+}
+
+double* dom7(double root, bool tet) {
+	static double chord[4];
+	chord[0] = root;
+	if (tet == true) {
+		chord[1] = root * MAJOR_THIRD_TET;
+		chord[2] = root * FIFTH_TET;
+		chord[3] = root * MINOR_SEVENTH_TET;
+	}
+	if (tet == false) {
+		chord[1] = root * MAJOR_THIRD_JI;
+		chord[2] = root * FIFTH_JI;
+		chord[3] = root * MINOR_SEVENTH_JI;
+	}
+	return chord;
+}
+
+double* mmaj7(double root, bool tet) {
+	static double chord[4];
+	chord[0] = root;
+	if (tet == true) {
+		chord[1] = root * MINOR_THIRD_TET;
+		chord[2] = root * FIFTH_TET;
+		chord[3] = root * MAJOR_SEVENTH_TET;
+	}
+	if (tet == false) {
+		chord[1] = root * MINOR_THIRD_JI;
+		chord[2] = root * FIFTH_JI;
+		chord[3] = root * MAJOR_SEVENTH_JI;
+	}
+	return chord;
 }
