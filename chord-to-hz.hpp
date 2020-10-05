@@ -142,3 +142,77 @@ double* mmaj7(double root, bool tet) {
 	}
 	return chord;
 }
+
+double* maj6(double root, bool tet) {
+	static double chord[4];
+	chord[0] = root;
+	if (tet == true) {
+		chord[1] = root * MAJOR_THIRD_TET;
+		chord[2] = root * FIFTH_TET;
+		chord[3] = root * MAJOR_SIXTH_TET;
+	}
+	if (tet == false) {
+		chord[1] = root * MAJOR_THIRD_JI;
+		chord[2] = root * FIFTH_JI;
+		chord[3] = root * MAJOR_SIXTH_JI;
+	}
+	return chord;
+}
+
+double* min6(double root, bool tet) {
+	static double chord[4];
+	chord[0] = root;
+	if (tet == true) {
+		chord[1] = root * MINOR_THIRD_TET;
+		chord[2] = root * FIFTH_TET;
+		chord[3] = root * MAJOR_SIXTH_TET;
+	}
+	if (tet == false) {
+		chord[1] = root * MINOR_THIRD_JI;
+		chord[2] = root * FIFTH_JI;
+		chord[3] = root * MAJOR_SIXTH_JI;
+	}
+	return chord;
+}
+
+double* majb5(double root, bool tet) {
+	static double chord[3];
+	chord[0] = root;
+	if (tet == true) {
+		chord[1] = root * MAJOR_THIRD_TET;
+		chord[2] = root * TRITONE_TET;
+	}
+	if (tet == false) {
+		chord[1] = root * MAJOR_THIRD_JI;
+		chord[2] = root * TRITONE_JI;
+	}
+	return chord;
+}
+
+double* sus2(double root, bool tet) {
+	static double chord[3];
+	chord[0] = root;
+	if (tet == true) {
+		chord[1] = root * MAJOR_SECOND_TET;
+		chord[2] = root * FIFTH_TET;
+	}
+	if (tet == false) {
+		chord[1] = root * MAJOR_SECOND_JI;
+		chord[2] = root * FIFTH_JI;
+	}
+	return chord;
+}
+
+double* sus4(double root, bool tet) {
+	static double chord[3];
+	chord[0] = root;
+	if (tet == true) {
+		chord[1] = root * FOURTH_TET;
+		chord[2] = root * FIFTH_TET;
+	}
+	if (tet == false) {
+		chord[1] = root * FOURTH_JI;
+		chord[2] = root * FIFTH_JI;
+	}
+	return chord;
+}
