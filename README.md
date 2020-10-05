@@ -17,3 +17,13 @@ Minor Seventh - min7()
 Dominant Seventh - dom7()
 
 Minor Major Seventh - mmaj7()
+
+Major Sixth - maj6()
+
+Minor Sixth - min6()
+
+Major (Flat Fifth) - majb5()
+
+Suspended Second - sus2()
+
+Suspended Fourth - sus4()
