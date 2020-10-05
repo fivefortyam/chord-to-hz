@@ -9,3 +9,11 @@ Minor - min()
 Diminished - dim()
 
 Augmented - aug()
+
+Major Seventh - maj7()
+
+Minor Seventh - min7()
+
+Dominant Seventh - dom7()
+
+Minor Major Seventh - mmaj7()
